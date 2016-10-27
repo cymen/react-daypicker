@@ -1,4 +1,5 @@
 .react-daypicker-root {
+  padding: 10px;
   width: 280px; }
   .react-daypicker-root abbr {
     border-bottom: 0; }
