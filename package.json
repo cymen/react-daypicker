@@ -24,6 +24,14 @@
     "babel-preset-es2015": "^6.18.0",
     "node-sass": "^3.10.1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cymen/react-daypicker.git"
+  },
+  "homepage": "https://github.com/cymen/react-daypicker",
+	"bugs": {
+		"url": "https://github.com/cymen/react-daypicker/issues"
+	},
   "scripts": {
     "build": "babel src -d lib && ./node_modules/node-sass/bin/node-sass src/DayPicker.scss > lib/DayPicker.css",
     "test": "echo \"Error: no test specified\" && exit 1"
