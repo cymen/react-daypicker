@@ -40,26 +40,31 @@ class DayPicker extends React.Component {
   }
 
   get month() {
-    const { month } = this.state;
-
-    return month.clone();
+    return this.state.month.clone();
   }
 
   previousMonth = () => {
+    const month = this.month.subtract(1, 'month');
+
     this.setState({
-      month: this.month.subtract(1, 'month'),
+      month,
+      keyPrefix: month.format('YYYY.MM'),
     });
   }
 
   nextMonth = () => {
+    const month = this.month.add(1, 'month');
+
     this.setState({
-      month: this.month.add(1, 'month'),
+      month,
+      keyPrefix: month.format('YYYY.MM'),
     });
   }
 
   onDayClick = (event) => {
     const dayOfMonth = event.nativeEvent.target.innerText
     const day = this.month.date(dayOfMonth);
+
     this.props.onDayClick(day);
   }
 
