@@ -1,0 +1,39 @@
+.react-daypicker-root {
+  width: 280px; }
+  .react-daypicker-root abbr {
+    border-bottom: 0; }
+  .react-daypicker-root th,
+  .react-daypicker-root td {
+    padding: 5px;
+    text-align: center;
+    width: 40px; }
+  .react-daypicker-root .header {
+    display: flex;
+    flex-direction: row; }
+  .react-daypicker-root .previous-month,
+  .react-daypicker-root .next-month {
+    color: #9b9b9b;
+    cursor: pointer;
+    padding: 5px;
+    user-select: none;
+    width: 40px; }
+    .react-daypicker-root .previous-month:hover,
+    .react-daypicker-root .next-month:hover {
+      color: #000; }
+  .react-daypicker-root .next-month {
+    text-align: right; }
+  .react-daypicker-root .month-year {
+    flex: 2;
+    font-weight: bold;
+    text-align: center; }
+  .react-daypicker-root .day {
+    cursor: pointer; }
+    .react-daypicker-root .day:hover:not(.empty) {
+      background-color: #eee; }
+    .react-daypicker-root .day.active {
+      background-color: #ddd; }
+    .react-daypicker-root .day.empty {
+      cursor: default; }
+    .react-daypicker-root .day.today {
+      font-weight: bold; }
+

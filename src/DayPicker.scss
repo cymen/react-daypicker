@@ -1,0 +1,62 @@
+.react-daypicker-root {
+  width: 280px;
+
+  abbr {
+    border-bottom: 0;
+  }
+
+  th,
+  td {
+    padding: 5px;
+    text-align: center;
+    width: 40px;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .previous-month,
+  .next-month {
+    color: #9b9b9b;
+    cursor: pointer;
+    padding: 5px;
+    user-select: none;
+    width: 40px;
+
+    &:hover {
+      color: #000;
+    }
+  }
+
+  .next-month {
+    text-align: right;
+  }
+
+  .month-year {
+    flex: 2;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .day {
+    cursor: pointer;
+
+    &:hover:not(.empty) {
+      background-color: #eee;
+    }
+
+    &.active {
+      background-color: #ddd;
+    }
+
+    &.empty {
+      cursor: default;
+    }
+
+    &.today {
+      font-weight: bold;
+    }
+  }
+}
