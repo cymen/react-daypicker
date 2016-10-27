@@ -24,7 +24,7 @@
     "node-sass": "^3.10.1"
   },
   "scripts": {
-    "build": "babel src -d lib",
+    "build": "babel src -d lib && ./node_modules/node-sass/bin/node-sass src/DayPicker.scss > lib/DayPicker.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
