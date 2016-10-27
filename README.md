@@ -52,7 +52,11 @@ The root element is `.react-daypicker-root`.
 
 ## Dependencies
 
-React and Moment.js are peer dependencies.
+No direct dependencies. Peer dependencies:
+
+* React
+* Moment.js
+* classnames
 
 ## Developing
 
