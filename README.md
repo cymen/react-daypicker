@@ -1,5 +1,10 @@
 # react-daypicker
 
+[![License][license-image]][license-url]
+[![Downloads][downloads-image]][downloads-url]
+
+[![npm badge][npm-badge-png]][package-url]
+
 A simple datepicker inspired by Pikaday.
 
 ![DayPicker screenshot](https://raw.githubusercontent.com/cymen/react-daypicker/master/daypicker.png)
@@ -65,5 +70,10 @@ See `package.json` for details but simply run:
 ```sh
 npm run build
 ```
-
-To compile the JavaScript and CSS.
+[package-url]: https://npmjs.org/package/react-daypicker
+[npm-version-svg]: http://versionbadg.es/cymen/react-daypicker.svg
+[npm-badge-png]: https://nodei.co/npm/react-daypicker.png?downloads=true&stars=true
+[license-image]: http://img.shields.io/npm/l/react-daypicker.svg
+[license-url]: LICENSE
+[downloads-image]: http://img.shields.io/npm/dm/react-daypicker.svg
+[downloads-url]: http://npm-stat.com/charts.html?package=react-daypicker
