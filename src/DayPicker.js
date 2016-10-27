@@ -150,7 +150,7 @@ class DayPicker extends React.Component {
 }
 
 DayPicker.propTypes = {
-  active: React.PropTypes.object.isRequired,
+  active: React.PropTypes.object,
   onDayClick: React.PropTypes.func.isRequired,
 };
 
