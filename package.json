@@ -1,0 +1,29 @@
+{
+  "name": "react-daypicker",
+  "version": "0.0.1",
+  "description": "A simple datepicker inspired by Pikaday.",
+  "main": "lib/DayPicker.js",
+  "keywords": [
+    "date",
+    "datepicker",
+    "pikaday",
+    "dates",
+    "react"
+  ],
+  "author": "Cymen Vig <cymenvig@gmail.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "moment": "^2.15.2",
+    "react": "^15.3.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-plugin-transform-class-properties": "^6.18.0",
+    "babel-plugin-transform-react-jsx": "^6.8.0",
+    "babel-preset-es2015": "^6.18.0"
+  },
+  "scripts": {
+    "build": "babel src -d lib",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
