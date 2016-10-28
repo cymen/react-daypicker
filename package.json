@@ -29,11 +29,14 @@
     "url": "git+https://github.com/cymen/react-daypicker.git"
   },
   "homepage": "https://github.com/cymen/react-daypicker",
-	"bugs": {
-		"url": "https://github.com/cymen/react-daypicker/issues"
-	},
+  "bugs": {
+    "url": "https://github.com/cymen/react-daypicker/issues"
+  },
   "scripts": {
     "build": "babel src -d lib && ./node_modules/node-sass/bin/node-sass src/DayPicker.scss > lib/DayPicker.css",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "react-moment-proptypes": "^1.2.0"
   }
 }
