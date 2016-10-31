@@ -7,7 +7,7 @@
 
 A simple datepicker inspired by Pikaday.
 
-![DayPicker screenshot](https://raw.githubusercontent.com/cymen/react-daypicker/master/daypicker.png)
+![DayPicker](https://raw.githubusercontent.com/cymen/react-daypicker/master/react-daypicker.gif)
 
 ## Installation
 
