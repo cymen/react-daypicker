@@ -53,7 +53,9 @@ You can import the Sass stylesheet instead:
 import 'react-daypicker/src/DayPicker.scss';
 ```
 
-The root element is `.react-daypicker-root`.
+The root element is `.react-daypicker-root`. The default styling is
+intentionally monochrome and basic so that you can drop it into your project
+without having to fiddle with styles right away.
 
 ## Dependencies
 
