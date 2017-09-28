@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 import momentPropTypes from 'react-moment-proptypes';
 import classNames from 'classnames';
 
-export default class DayPicker extends React.Component {
+export default class DayPicker extends Component {
   static propTypes = {
     active: momentPropTypes.momentObj,
-    onDayClick: React.PropTypes.func.isRequired,
+    onDayClick: PropTypes.func.isRequired,
   };
 
   constructor(props) {
