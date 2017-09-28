@@ -68,6 +68,7 @@ without having to fiddle with styles right away.
 * React
 * Moment.js
 * classnames
+* prop-types
 
 ## Developing
 
