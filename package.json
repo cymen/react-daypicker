@@ -15,7 +15,8 @@
   "peerDependencies": {
     "classnames": ">=2.0.0",
     "moment": "2.10 - 2.14 || ^2.15.1",
-    "react": ">=0.14"
+    "react": ">=0.15",
+    "prop-types": ">=15.6"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
