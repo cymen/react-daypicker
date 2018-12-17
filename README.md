@@ -76,9 +76,8 @@ without having to fiddle with styles right away.
 ### Peer
 
 * React
-* Moment.js
+* moment
 * classnames
-* prop-types
 
 ## Developing
 
