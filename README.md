@@ -9,7 +9,7 @@
 
 A simple datepicker inspired by Pikaday.
 
-![DayPicker](https://raw.githubusercontent.com/cymen/react-daypicker/master/react-daypicker.gif)
+![DayPicker](react-daypicker.gif)
 
 ## Installation
 
@@ -22,6 +22,14 @@ yarn add react-daypicker
 ```sh
 npm install --save react-daypicker
 ```
+
+## Usage agnostic
+
+Note that this component does not draw any border around itself or handle popping
+up. That is up to you and your framework. I am using it with react-bootstrap v3
+and it my usage looks like this:
+
+![Usage](usage.png)
 
 ## Usage
 
