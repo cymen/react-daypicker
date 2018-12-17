@@ -69,10 +69,6 @@ without having to fiddle with styles right away.
 
 ## Dependencies
 
-### Direct
-
-* react-moment-proptypes
-
 ### Peer
 
 * React
