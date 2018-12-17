@@ -35,6 +35,11 @@
   "bugs": {
     "url": "https://github.com/cymen/react-daypicker/issues"
   },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "not dead"
+  ],
   "scripts": {
     "build": "babel src -d lib && ./node_modules/node-sass/bin/node-sass src/DayPicker.scss > lib/DayPicker.css",
     "test": "echo \"Error: no test specified\" && exit 1"
