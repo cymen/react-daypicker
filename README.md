@@ -23,7 +23,7 @@ yarn add react-daypicker
 npm install --save react-daypicker
 ```
 
-## Usage agnostic
+## Agnostic building block
 
 Note that this component does not draw any border around itself or handle popping
 up. That is up to you and your framework. I am using it with react-bootstrap v3
