@@ -2,6 +2,8 @@
 
 [![License][license-image]][license-url]
 [![Downloads][downloads-image]][downloads-url]
+![minified size](https://badgen.net/bundlephobia/min/react-daypicker)
+![minzipped size](https://badgen.net/bundlephobia/minzip/react-daypicker)
 
 [![npm badge][npm-badge-png]][package-url]
 
