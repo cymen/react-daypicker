@@ -26,8 +26,8 @@ npm install --save react-daypicker
 ## Agnostic building block
 
 Note that this component does not draw any border around itself or handle popping
-up. That is up to you and your framework. I am using it with react-bootstrap v3
-and it my usage looks like this:
+up. That is up to you. I am using it with react-bootstrap v3 and it my usage looks
+like this:
 
 ![Usage](usage.png)
 
