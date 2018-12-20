@@ -41,6 +41,30 @@ export default class DayPicker extends Component {
     };
   }
 
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.active && !prevState.active || nextProps.active.valueOf() !== prevState.active.valueOf()) {
+      return {
+        active: nextProps.active,
+        activeParts: DayPicker.getDateMonthYear(nextProps.active),
+      };
+    }
+    return null;
+  }
+
+  static getDateMonthYear(date) {
+    if (date) {
+      return {
+        date: date.getDate(),
+        month: date.getMonth(),
+        year: date.getFullYear(),
+      };
+    }
+  }
+
+  static isSameDay(a, b) {
+    return a && b && a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
+  }
+
   get days() {
     const { month, year } = this.state;
     const daysInMonth = new Date(year, month, 0).getDate();
@@ -118,7 +142,7 @@ export default class DayPicker extends Component {
     const { active } = this.props;
 
     const isToday = day && day.valueOf() === today.valueOf();
-    const isActive = active && day && active.valueOf() === day.valueOf();
+    const isActive = active && day && DayPicker.isSameDay(active, day);
 
     return (
       <td
