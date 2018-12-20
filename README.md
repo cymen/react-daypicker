@@ -71,6 +71,32 @@ An optional property `active` can be added in order to mark a day as active:
 component, it was expected to be a Moment.js wrapped date but that is no longer the
 case.*
 
+## Passing in custom month and day names
+
+A couple of optional props allow passing in custom month, day and short day names. There isn't any
+error handling around these props yet so be sure that you pass in 12 months and 7 days. The props are:
+
+### monthNames
+
+Set `monthNames` prop to an Array of 12 strings which will be used for the month names.
+
+Default: `['January', ... , 'December']`
+
+### longDayNames
+
+Set `longDayNames` prop to an Array of 7 strings which will be used for the long day names. Note that
+you need to hover over the short day name to see this long day name. Note the first day must be the
+equivalent of Sunday.
+
+Default: `['Sunday', ..., 'Saturday']`
+
+### shortDayNames
+
+Set `shortDayNames` prop to an Array of 7 strings which will be used for the short day names.  Note
+the first day must be the equivalent of Sunday.
+
+Default: `['Sun', ..., 'Sat']`
+
 ## Options on styling
 
 You can import the Sass stylesheet instead:
