@@ -8,7 +8,8 @@
     "datepicker",
     "pikaday",
     "dates",
-    "react"
+    "react",
+    "calendar"
   ],
   "author": "Cymen Vig <cymenvig@gmail.com>",
   "license": "MIT",
