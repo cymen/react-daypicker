@@ -51,7 +51,7 @@ export default class DayPicker extends Component {
 
   get days() {
     const { month, year } = this.state;
-    const daysInMonth = new Date(year, month, 0).getDate();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
     const days = [];
     const offset = new Date(year, month, 1).getDay();
     if (offset < 7) {
@@ -59,7 +59,7 @@ export default class DayPicker extends Component {
         days.push(null);
       }
     }
-    for (let i = 1; i < daysInMonth; i++) {
+    for (let i = 1; i <= daysInMonth; i++) {
       days.push(new Date(year, month, i));
     }
     return days;
