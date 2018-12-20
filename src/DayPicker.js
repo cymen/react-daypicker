@@ -10,7 +10,7 @@ const MONTHS = [
   "July",
   "August",
   "September",
-  "Octoboer",
+  "October",
   "November",
   "December"
 ];
