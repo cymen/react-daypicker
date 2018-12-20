@@ -14,7 +14,6 @@ const MONTHS = [
   "November",
   "December"
 ];
-
 const DAYS_LONG = [
   "Sunday",
   "Monday",
@@ -24,7 +23,6 @@ const DAYS_LONG = [
   "Friday",
   "Saturday"
 ];
-
 const DAYS_SHORT = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 export default class DayPicker extends Component {
@@ -41,28 +39,14 @@ export default class DayPicker extends Component {
     };
   }
 
-  static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.active && !prevState.active || nextProps.active.valueOf() !== prevState.active.valueOf()) {
-      return {
-        active: nextProps.active,
-        activeParts: DayPicker.getDateMonthYear(nextProps.active),
-      };
-    }
-    return null;
-  }
-
-  static getDateMonthYear(date) {
-    if (date) {
-      return {
-        date: date.getDate(),
-        month: date.getMonth(),
-        year: date.getFullYear(),
-      };
-    }
-  }
-
   static isSameDay(a, b) {
-    return a && b && a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
+    return (
+      a &&
+      b &&
+      a.getFullYear() === b.getFullYear() &&
+      a.getMonth() === b.getMonth() &&
+      a.getDate() === b.getDate()
+    );
   }
 
   get days() {
