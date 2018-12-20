@@ -24,9 +24,7 @@
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "7.0.0",
     "babel-plugin-transform-react-remove-prop-types": "0.4.21",
-    "node-sass": "^4.11.0",
-    "prop-types": "15.6.2",
-    "react-moment-proptypes": "^1.6.0"
+    "node-sass": "^4.11.0"
   },
   "repository": {
     "type": "git",
