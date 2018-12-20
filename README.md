@@ -15,15 +15,7 @@ A simple datepicker inspired by Pikaday.
 
 With version 3.0.0, all external dependencies are removed except react (as a peer). That means for you
 as a consumer that the `active` prop which was a `moment` date is **now expected to be a vanilla
-JavaScript date**. However, for date equality reasons, `active` is expected to be a day so you
-must pass in a `Date` instance with no more accuracy beyond date set.
-
-Example:
-
-```javascript
-<DayPicker active={new Date(2018, 11, 1)} />
-```
-([remember with JavaScript, months start at 0 so 11 is December](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getMonth))
+JavaScript date**.
 
 ## Installation
 
@@ -62,7 +54,7 @@ An optional property `active` can be added in order to mark a day as active:
 
 ```javascript
 <DayPicker
-  active={new Date(2018, 11, 1)}
+  active={new Date()}
   onDayClick={(day) => this.setState({ day })}
 />
 ```
