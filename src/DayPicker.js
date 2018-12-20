@@ -118,7 +118,9 @@ export default class DayPicker extends Component {
   };
 
   onDayClick = day => () => {
-    this.props.onDayClick(day);
+    if (day) {
+      this.props.onDayClick(day);
+    }
   };
 
   renderDay = (day, index) => {
