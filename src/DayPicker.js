@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import classNames from 'classnames';
 
 const MONTHS = [
   'January',
@@ -139,11 +138,16 @@ export default class DayPicker extends Component {
 
     return (
       <td
-        className={classNames('day', {
-          active: isActive,
-          empty: !day,
-          today: isToday,
-        })}
+        className={
+          [
+            'day',
+            isActive ? 'active' : null,
+            !day ? 'empty' : null,
+            isToday ? 'today' : null,
+          ]
+            .filter(v => v)
+            .join(' ')
+        }
         key={`${year}.${month}.day.${index}`}
         onClick={this.onDayClick(day)}
       >{day ? day.getDate() : ''}</td>
