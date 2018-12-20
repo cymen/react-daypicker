@@ -1,37 +1,67 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import moment from 'moment';
-import momentPropTypes from 'react-moment-proptypes';
 import classNames from 'classnames';
 
-export default class DayPicker extends Component {
-  static propTypes = {
-    active: momentPropTypes.momentObj,
-    onDayClick: PropTypes.func.isRequired,
-  };
+const MONTHS = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'Octoboer',
+  'November',
+  'December',
+];
 
+const DAYS_LONG = [
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+];
+
+const DAYS_SHORT = [
+  'Sun',
+  'Mon',
+  'Tue',
+  'Wed',
+  'Thu',
+  'Fri',
+  'Sat',
+];
+
+export default class DayPicker extends Component {
   constructor(props) {
     super(props);
 
-    const date = moment();
+    const now = new Date();
 
     this.state = {
-      month: date,
-      keyPrefix: date.format('YYYY.MM'),
+      date: now.getDate(),
+      month: now.getMonth(),
+      today: new Date(now.getFullYear(), now.getMonth(), now.getDate()),
+      year: now.getFullYear(),
     };
   }
 
   get days() {
+    const { month, year } = this.state;
+    const daysInMonth = new Date(year, month, 0).getDate();
     const days = [];
-    const daysInMonth = this.month.daysInMonth();
-    const offset = this.month.date(0).day() + 1;
+    const offset = new Date(year, month, 1).getDay();
     if (offset < 7) {
       for (let i = 0; i < offset; i++) {
         days.push(null);
       }
     }
-    for (let i = 1; i <= daysInMonth; i++) {
-      days.push(i);
+    for (let i = 1; i < daysInMonth; i++) {
+      days.push(new Date(year, month, i));
     }
     return days;
   }
@@ -46,51 +76,66 @@ export default class DayPicker extends Component {
     return weeks;
   }
 
-  get month() {
-    return this.state.month.clone();
+  longMonthName(month) {
+    if (this.props.monthNames) {
+      return this.props.monthNames[month];
+    }
+
+    return MONTHS[month];
+  }
+
+  longDayName(dayOfWeek) {
+    if (this.props.longDayNames) {
+      return this.props.longDayNames[dayOfWeek];
+    }
+
+    return DAYS_LONG[dayOfWeek];
+  }
+
+  shortDayName(dayOfWeek) {
+    if (this.props.shortDayNames) {
+      return this.props.shortDayNames[dayOfWeek];
+    }
+
+    return DAYS_SHORT[dayOfWeek];
   }
 
   previousMonth = () => {
-    const month = this.month.subtract(1, 'month');
+    const { month, year } = this.state;
 
     this.setState({
-      month,
-      keyPrefix: month.format('YYYY.MM'),
-    });
+      month: month !== 0
+        ? month - 1
+        : 11,
+      year: month !== 0
+        ? year
+        : year - 1,
+    })
   }
 
   nextMonth = () => {
-    const month = this.month.add(1, 'month');
+    const { month, year } = this.state;
 
     this.setState({
-      month,
-      keyPrefix: month.format('YYYY.MM'),
+      month: month !== 11
+        ? month + 1
+        : 0,
+      year: month !== 11
+        ? year
+        : year + 1,
     });
   }
 
-  onDayClick = (event) => {
-    const dayOfMonth = event.nativeEvent.target.innerText
-    const day = this.month.date(dayOfMonth);
-
+  onDayClick = (day) => () => {
     this.props.onDayClick(day);
   }
 
   renderDay = (day, index) => {
-    const { keyPrefix } = this.state;
+    const { date, month, today, year} = this.state;
     const { active } = this.props;
-    const today = moment();
-    const currentMonth = this.month;
 
-    const isToday = day
-      && currentMonth.year() == today.year()
-      && currentMonth.month() == today.month()
-      && day == today.date();
-
-    const isActive = day
-      && active
-      && currentMonth.year() == active.year()
-      && currentMonth.month() == active.month()
-      && day == active.date();
+    const isToday = day && day.valueOf() === today.valueOf();
+    const isActive = active && day && active.valueOf() === day.valueOf();
 
     return (
       <td
@@ -99,56 +144,52 @@ export default class DayPicker extends Component {
           empty: !day,
           today: isToday,
         })}
-        key={`${keyPrefix}.day.${index}`}
-        onClick={this.onDayClick}
-      >{day || ''}</td>
+        key={`${year}.${month}.day.${index}`}
+        onClick={this.onDayClick(day)}
+      >{day ? day.getDate() : ''}</td>
     );
   }
 
   renderWeek = (days, index) => {
-    const { keyPrefix } = this.state;
+    const { month, year } = this.state;
 
     return (
       <tr
-        key={`${keyPrefix}.week.${index}`}
+        key={`${year}.${month}.week.${index}`}
       >
         {days.map(this.renderDay)}
       </tr>
     );
   }
 
+  renderDayHeader(dayOfWeek) {
+    return (
+      <th scope="col">
+        <abbr title={this.longDayName(dayOfWeek)}>{this.shortDayName(dayOfWeek)}</abbr>
+      </th>
+    );
+  }
+
   render() {
+    const { month, year } = this.state;
+
     return (
       <div className="react-daypicker-root">
         <div className="header">
           <div className="previous-month" onClick={this.previousMonth}>◀</div>
-          <div className="month-year">{this.month.format('MMMM YYYY')}</div>
+          <div className="month-year">{this.longMonthName(month)} {year}</div>
           <div className="next-month" onClick={this.nextMonth}>▶</div>
         </div>
         <table>
           <thead>
             <tr>
-              <th scope="col">
-                <abbr title="Sunday">Sun</abbr>
-              </th>
-              <th scope="col">
-                <abbr title="Monday">Mon</abbr>
-              </th>
-              <th scope="col">
-                <abbr title="Tuesday">Tue</abbr>
-              </th>
-              <th scope="col">
-                <abbr title="Wednesday">Wed</abbr>
-              </th>
-              <th scope="col">
-                <abbr title="Thursday">Thu</abbr>
-              </th>
-              <th scope="col">
-                <abbr title="Friday">Fri</abbr>
-              </th>
-              <th scope="col">
-                <abbr title="Saturday">Sat</abbr>
-              </th>
+              {this.renderDayHeader(0)}
+              {this.renderDayHeader(1)}
+              {this.renderDayHeader(2)}
+              {this.renderDayHeader(3)}
+              {this.renderDayHeader(4)}
+              {this.renderDayHeader(5)}
+              {this.renderDayHeader(6)}
             </tr>
           </thead>
           <tbody>
