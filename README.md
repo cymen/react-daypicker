@@ -11,9 +11,9 @@ A simple datepicker inspired by Pikaday.
 
 ![DayPicker](react-daypicker.gif)
 
-## v3.0.0 is a breaking change
+## Version 3 is a breaking change
 
-With v3.0.0, all external dependencies are removed except react (as a peer). That means for you
+With version 3.0.0, all external dependencies are removed except react (as a peer). That means for you
 as a consumer that the `active` prop which was a `moment` date is **now expected to be a vanilla
 JavaScript date**. However, for date equality reasons, `active` is expected to be a day so you
 must pass in a `Date` instance with no more accuracy beyond date set.
