@@ -44,6 +44,7 @@
   ],
   "scripts": {
     "build": "babel src -d lib && ./node_modules/node-sass/bin/node-sass src/DayPicker.scss > lib/DayPicker.css",
+    "watch": "babel -w src -d lib",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
