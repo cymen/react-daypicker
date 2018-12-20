@@ -13,10 +13,9 @@
   "author": "Cymen Vig <cymenvig@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
-    "classnames": ">=2.0.0",
-    "moment": "2.10 - 2.14 || ^2.15.1",
     "react": ">=0.15"
   },
+  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
