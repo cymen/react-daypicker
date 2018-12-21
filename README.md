@@ -11,6 +11,8 @@ A simple datepicker inspired by Pikaday.
 
 ![DayPicker](react-daypicker.gif)
 
+Try it yourself at the [Storybook](http://blog.cymen.org/react-daypicker).
+
 ## Version 3 is a breaking change
 
 With version 3.0.0, all external dependencies are removed except react (as a peer). That means for you
