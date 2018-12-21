@@ -24,8 +24,13 @@
     "@babel/plugin-transform-react-jsx": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "7.0.0",
+    "@storybook/addon-actions": "4.1.3",
+    "@storybook/addon-links": "4.1.3",
+    "@storybook/react": "4.1.3",
+    "@storybook/storybook-deployer": "2.8.1",
     "babel-plugin-transform-react-remove-prop-types": "0.4.21",
-    "node-sass": "^4.11.0"
+    "node-sass": "^4.11.0",
+    "sass-loader": "7.1.0"
   },
   "repository": {
     "type": "git",
@@ -42,7 +47,9 @@
   ],
   "scripts": {
     "build": "babel src -d lib && ./node_modules/node-sass/bin/node-sass src/DayPicker.scss > lib/DayPicker.css",
-    "watch": "babel -w src -d lib",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy-storybook": "storybook-to-ghpages",
+    "storybook": "start-storybook -p 6006",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "babel -w src -d lib"
   }
 }
