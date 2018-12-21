@@ -7,7 +7,7 @@ import { linkTo } from '@storybook/addon-links';
 import DayPicker from '../src/DayPicker';
 import '../src/DayPicker.scss';
 
-storiesOf('FloatingLabelInput', module)
+storiesOf('DayPicker', module)
   .add(
     'examples',
     () => (
