@@ -29,7 +29,7 @@
     "@storybook/react": "5.0.11",
     "@storybook/storybook-deployer": "2.8.1",
     "babel-plugin-transform-react-remove-prop-types": "0.4.24",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "sass-loader": "7.1.0"
   },
   "repository": {
